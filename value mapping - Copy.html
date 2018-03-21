@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> </script>
+  </head>
+  <body>
+    <p>Compare value mapping- for us who hates comparing and calculating using brains.</p>
+<script type="text/javascript">
+
+  //initializing values for VIP to MTX points
+var vip  = [];
+var mtx  = [];
+var new_vip = [];
+var new_mtx = [];
+
+//initializing values for MTX to VIP points
+var vipa  = [];
+var mtxa  = [];
+var new_vipa = [];
+var new_mtxa = [];
+
+//Assigning values for VIP to MTX points
+
+var vipInput  = parseFloat(document.getElementById("vip").value);
+var mtxInput   = parseFloat(document.getElementById("mtx").value);
+var new_vipInput = parseFloat(document.getElementById("new_vip").value);
+var new_mtxInput = parseFloat(document.getElementById("new_mtx").value);
+
+//Assigning values for MTX to VIP points
+var vipaInput  = parseFloat(document.getElementById("vipa").value);
+var mtxaInput   = parseFloat(document.getElementById("mtxa").value);
+var new_vipaInput = parseFloat(document.getElementById("new_vipa").value);
+var new_mtxaInput = parseFloat(document.getElementById("new_mtxa").value);
+
+//adding values into array
+function insert ( ) {
+ vip.push( vipInput.value );
+ mtx.push( mtxInput.value );
+ new_vip.push( new_vipInput.value );
+ vipa.push( vipaInput.value );
+ mtxa.push( mtxaInput.value );
+ new_vipa.push( new_vipaInput.value );
+
+
+}
+
+function vip_to_mtx() {
+  var y = parseFloat(document.getElementById("vip").value);
+  var z = parseFloat(document.getElementById("mtx").value);
+  var a = parseFloat(document.getElementById("new_vip").value);
+  var x = (z/y)*a;
+  document.getElementById("demo").innerHTML = x;
+}
+function mtx_to_vip1() {
+  var p = parseFloat(document.getElementById("vipa").value);
+  var q = parseFloat(document.getElementById("mtxa").value);
+  var r = parseFloat(document.getElementById("new_vipa").value);
+  var s = (p/q)*r;
+  document.getElementById("demoo").innerHTML = s;
+}
+function clearText()  
+{
+
+  //clear text for VIP to MTX
+    document.getElementById('vip').value = "";
+    document.getElementById('mtx').value = "";
+    document.getElementById('new_vip').value = "";
+    document.getElementById('new_mtx').value = "";
+}
+function clearText1(){
+    // clear text for MTX to VIP
+
+    document.getElementById('vipa').value = "";
+    document.getElementById('mtxa').value = "";
+    document.getElementById('new_mtxa').value = "";
+     document.getElementById('new_vipa').value = "";
+
+}  
+
+
+</script>
+
+
+<p>
+  Enter VIP points:
+  <input type="text" id="vip" name="text1">
+  Enter MTX price:
+  <input type="text" id="mtx" name="text2">
+  <br>
+  <br><br>
+  Enter new VIP point:
+  <input type="text" id="new_vip" name="text3">
+  <br>
+</p>
+<p>
+  Click the button to calculate <STRONG>New MTX price.</STRONG> 
+  <button onclick="vip_to_mtx()">Try it</button>
+</p>
+<br>
+<a id="demo"></a>
+<p>
+  <p>
+  <button onclick="clearText()">Reset values</button>
+</p>
+</p>
+
+<hr>
+<hr>
+<br>
+<p>
+  <p>
+  Enter VIP points:
+  <input type="text" id="vipa" name="text4">
+  Enter MTX price:
+  <input type="text" id="mtxa" name="text5">
+  <br>
+  <br><br>
+  Enter new MTX point:
+  <input type="text" id="new_mtxa" name="text6">
+  <br>
+</p>
+<p>
+  Click the button to calculate <STRONG>New VIP Points.</STRONG> 
+  <button onclick="mtx_to_vip1()">Try it</button>
+</p>
+<br>
+<a id="demoo"></a>
+<p>
+  <p>
+  <button onclick="clearText1()">Reset values</button>
+</p>
+</p>
+
+</p>  
+  </body>
+  </html>
+
+
